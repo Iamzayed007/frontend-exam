@@ -16,7 +16,7 @@ function App() {
   useEffect(()=>{
     const result = JSON.parse(window.localStorage.getItem('posts'))
     setAllData(result);
-  },[])
+  },[]);
 
   
   //Upddate data
