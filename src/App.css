@@ -37,3 +37,35 @@
     transform: translateY(0px);
   }
 }
+
+.todos{
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 10px;
+  padding: 20px;
+  
+}
+.todo{
+  gap: 3px;
+  background-color: aliceblue;
+  width: 300px;;
+  padding: 10px;
+}
+.todo button{
+  color: white;
+  background-color: rgb(250, 42, 42);
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.action{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+}
