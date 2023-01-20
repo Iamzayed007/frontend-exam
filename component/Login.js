@@ -1,17 +1,13 @@
-//import React from 'react';
 import React, { Component, useState } from "react";
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import {useNavigate } from 'react-router-dom';
-// import { Login } from '../component/Login';
-
-function App() {
-  const [email_or_username, setName] = useState('');
-  const [password, setPassword] = useState('');
-  const [is_contributor, setContributor] = useState(false);
-  //const history = useHistory();
-  // const navigate = useNavigate();
-  return (
-    <div> 
+import {useHistory} from 'react-router-dom';
+export const Login = () => {
+    const [email_or_username, setName] = useState('');
+    const [password, setPassword] = useState('');
+    const [is_contributor, setContributor] = useState(false);
+    const history = useHistory();
+    return (           
+        <div> 
             <Form className="login-form">
                 <h1>
                 <div className="text-right">
@@ -72,13 +68,13 @@ function App() {
                             console.log(JSON.parse(window.localStorage.getItem("user"))); // prints null here
 
                             const ref="/homepage";
-                            // navigate.push(ref);
+                            history.push(ref);
                             //redirect to home page
                          }
                          else if (response.status === 204) {
                             console.log("Invalid Username or Password or Incorrect Permissions");
                             const ref="/";
-                            // navigate.push(ref);
+                            history.push(ref);
                             // reload login page
                          }
                      })
@@ -86,10 +82,8 @@ function App() {
 
                     }}
                     className="btn-lg btn-dark btn-block">
-                    Log in</Button>               
+                    Log in</Button>     
+                    <Button>Update</Button>          
             </Form>
         </div>);  
-  
 }
-
-export default App;
