@@ -64,6 +64,16 @@ function App() {
                      .then(response => {                         
                          if (response.status === 201) {
 
+
+                          response.json().then(data => { 
+                            window.localStorage.setItem("user", JSON.stringify(data.user));                            
+                            console.log(JSON.parse(window.localStorage.getItem("user"))); 
+                            const ref="/homepage";
+                            history.push(ref);
+                            // carry out other logic below
+                          })
+
+
                             response.json().then(data => { // store user in localStorage as token
                                 window.localStorage.setItem("user", JSON.stringify(data.user));
                                 console.log(JSON.parse(window.localStorage.getItem("user"))); // prints correctly here
